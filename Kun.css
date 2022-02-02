@@ -1,0 +1,1261 @@
+:root {
+  --accent: #685b50;
+  --bg: #fff;
+  --border: ;
+  --black: #000000;
+  --enemy: #f05f5f;
+  --friendly: #2988d6;
+  --hud-text-shadow: 0 0 0 var(--black), 1px 0 0 var(--black),
+    -1px 0 var(--black), 0 -1px var(--black), 0 1px var(--black),
+    1px 1px var(--black), 1px -1px var(--black), -1px 1px var(--black),
+    -1px -1px var(--black), 0 2px var(--black), 0 -2px var(--black),
+    2px 0 var(--black), -2px 0 var(--black), 1px 2px var(--black),
+    -1px 2px var(--black), 1px -2px var(--black), -1px -2px var(--black),
+    2px 2px var(--black), -2px 2px var(--black), 2px -2px var(--black),
+    -2px -2px var(--black), 0 0 2px var(--black), 0 0 2px var(--black),
+    0 0 2px var(--black);
+  --good: #29d6a6;
+  --neutral: #fcd66e;
+  --bad: #f05f5f;
+  --enemy: #f05f5f;
+  --friendly: #29d6a6;
+}
+
+/*Fonts*/
+/*Credit goes to tae#4444*/
+@font-face {
+  font-family: JP;
+  src: url(https://dl.dropboxusercontent.com/s/9b7aer2osbcd388/logotypejp_mp_b_1.1.ttf?dl=0);
+}
+@font-face {
+  font-family: gamefont;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_c5H3gnD_g.woff2);
+}
+@font-face {
+  font-family: Bungee;
+  src: url(https://fonts.gstatic.com/s/bungee/v6/N0bU2SZBIuF2PU_0DXR1.woff2);
+}
+* {
+  font-family: gamefont, JP;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_c5H3gnD_g.woff2) !important;
+}
+a {
+  color: var(--accent);
+}
+/*Removal*/
+#mainLogo,
+#seasonLabel,
+#aHolder,
+#tlInfHold,
+#merchHolder,
+#newsHolder,
+#editorBtnM,
+.progressBar,
+.verticalSeparator,
+.menuItemTitle,
+#rankedSoonTm,
+#faceItIconM {
+  display: none !important;
+}
+/*HeaderBar Left*/
+.headerBarLeft,
+#mLevelCont {
+  background-color: transparent;
+}
+
+#menuMiniProfilePic {
+  background-color: transparent;
+  border-radius: 100%;
+  content: url(https://cdn.discordapp.com/attachments/925735566727868476/936531854293626940/image_8.png);
+  margin-right: 50px;
+  transform: translateY(50px) translateX(50px) scale(4.5);
+}
+
+#mailContainer {
+  transform: translateX(10px);
+}
+
+#menuKRCount {
+  transform: translateY(10px) translateX(-65px);
+  font-size: 20px;
+  color: #fff;
+  width: 120px !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+#menuKRCount span {
+  color: var(--accent) !important;
+}
+
+#menuKRCount:after {
+  content: none;
+}
+
+#mLevelCont {
+  transform: translateX(-140%);
+  background-color: rgba(225, 225, 225, 0.6);
+  transform: none;
+  top: -1px;
+}
+
+#mLevelContV {
+  font-size: 20px;
+}
+
+#mLevelContV,
+#mailIcon {
+  color: var(--accent) !important;
+}
+
+#mailIcon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+#mailCount {
+  background-color: #fff;
+  color: #000;
+  width: 16px;
+  height: 16px;
+}
+#mLevelContV:before {
+  content: "LVL ";
+}
+.material-icons[style="color:#cc51f8;font-size:27px;margin-left:5px;vertical-align:top;margin-right:-5px;"] {
+  color: #fff !important;
+}
+#menuAccountUsername {
+  color: var(--accent);
+  font-size: 20px;
+  position: relative;
+  top: 43px;
+  left: 85px;
+}
+
+#menuAccountUsername:before {
+  content: "";
+  position: fixed;
+  left: 165px;
+  top: 60px;
+  display: inline-block;
+  width: 210px;
+  height: 30px;
+  background-color: var(--bg);
+  z-index: -2;
+  clip-path: polygon(0% 0%, 85% 0%, 78% 100%, 0% 100%);
+}
+#uiBase.onMenu #chatHolder {
+  left: 10px !important;
+}
+#voiceDisplay {
+  display: none !important;
+}
+/*Menu*/
+#menuItemContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  position: fixed;
+  top: 90% !important;
+  left: calc(50% - 340px);
+  width: 30%;
+  justify-content: space-around;
+  height: 80px;
+  border-top: 4px solid var(--accent);
+}
+.menuItem .menBtnIcn {
+  color: var(--accent) !important;
+}
+#subLogoButtons {
+  bottom: 125px !important;
+}
+.button.small {
+  border: none !important;
+  background-color: transparent;
+}
+/*Customize Canvas*/
+.buttonB {
+  border-color: var(--accent) !important;
+}
+/*Customize*/
+
+/*SakuraThemeCSS*/
+#customizeButton .material-icons:before {
+  content: url(https://cdn.discordapp.com/attachments/925735566727868476/936558739459285033/kitagawa_marin_render_by_minhchauk1k_deyfa3g-pre.png);
+  position: fixed;
+  bottom: -40px;
+  right: calc(10% - 120px) !important;
+  z-index: -1;
+  transition: 0.2s;
+  transform: translate(50%, 10%) rotate(0deg) scale(0.8);
+}
+#customizeButton .material-icons {
+  font-size: 0 !important;
+}
+div#infoHider {
+  z-index: -1;
+}
+#bubbleContainer {
+  display: none !important;
+  z-index: 100;
+}
+#menuClassContainer {
+  display: block;
+  position: fixed;
+  top: unset;
+  bottom: unset;
+  transform: unset;
+  z-index: 100 !important;
+}
+#customizeButton {
+  position: fixed;
+  z-index: 100;
+  display: block;
+  top: unset;
+  width: 250px;
+  height: 240px;
+  border: unset !important;
+  background: transparent;
+  border-radius: 100px;
+  font-size: 0 !important;
+}
+#customizeButton:hover {
+  transform: unset;
+}
+@keyframes quaytay {
+  0% {
+    transform: translate(50%, 10%) rotate(0deg) scale(0.8);
+  }
+  50% {
+    transform: translate(50%, 10%) rotate(-20deg) scale(0.8);
+  }
+  100% {
+    transform: translate(50%, 10%) rotate(0deg) scale(0.8);
+  }
+}
+#customizeButton:hover > .material-icons:before {
+  animation: quaytay 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.4s;
+  filter: drop-shadow(0 0 20px var(--border-color));
+}
+#menuClassName {
+  bottom: 10px;
+  position: fixed;
+  left: 20px;
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  opacity: 0;
+}
+#menuClassSubtext {
+  bottom: 70px;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  position: fixed;
+  left: 20px;
+  opacity: 0;
+}
+#menuClassNameTag {
+  margin-top: unset;
+  position: fixed;
+  left: 20px;
+  bottom: 100px;
+  opacity: 0;
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+#classPreviewCanvas {
+  z-index: -1;
+  margin-bottom: unset;
+  position: fixed;
+  right: calc(-20% + 180px);
+  top: unset;
+  bottom: -350px;
+  left: unset;
+  transform: translate(-50%, 0%);
+  opacity: 0;
+  filter: drop-shadow(0 0 10px var(--accent-color));
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+#policeButton {
+  position: fixed;
+  left: calc(20% - 10px);
+  bottom: 10px;
+  border: 4px solid var(--border) !important;
+  background: #7e5150;
+}
+#menuClassContainer:hover > #classPreviewCanvas {
+  opacity: 1;
+  transition: 0.6s cubic-bezier(0.58, 0.07, 0.27, 1.55);
+  bottom: 80px;
+}
+#menuClassContainer:hover > #menuClassNameTag,
+#menuClassContainer:hover > #menuClassSubtext,
+#menuClassContainer:hover > #menuClassName {
+  opacity: 1;
+  left: calc(80% - 80px);
+  transition: 0.6s cubic-bezier(0.51, 0.01, 0.27, 1.55);
+}
+/*Terms*/
+#termsInfo {
+  display: none;
+}
+#mapInfo {
+  font-size: 0 !important;
+}
+#uiBase.onMenu #mapInfo:after {
+  content: "css by Abyy#1705";
+  position: fixed;
+  font-size: 20px !important;
+  top: 0;
+  right: calc(50% - 60px);
+}
+/*Settings*/
+#menuWindow {
+  background-color: transparent !important;
+  backdrop-filter: blur(8px);
+}
+.settingsHeader {
+  background-color: transparent;
+  border-radius: 12px;
+}
+
+#settSearch {
+  color: var(--accent);
+  background-color: transparent;
+}
+
+#settSearch::placeholder {
+  color: var(--accent);
+}
+
+.inputGrey2 {
+  color: var(--accent);
+  background-color: transparent;
+}
+
+.inputGrey2::placeholder {
+  color: #fff;
+}
+
+.settingsBtn {
+  color: var(--accent) !important;
+  background-color: transparent;
+}
+div[style="width:auto;background-color:#994cd1"] {
+  background-color: #fff !important;
+}
+.settingsBtn:hover {
+  color: #fff !important;
+}
+
+.dark .tabANew,
+.settingTab:hover,
+.dark .tabANew:hover,
+#settingsTabLayout,
+.settingTab {
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+
+.dark .tabANew:hover {
+  cursor: pointer;
+}
+
+.settingTab {
+  color: var(--accent) !important;
+}
+
+.settingTab:hover {
+  color: #fff !important;
+}
+
+.setHed {
+  background-color: transparent !important;
+  border: none;
+  color: #fff !important;
+}
+
+.setHed:hover,
+.setHed:hover .plusOrMinus {
+  color: #dbdbdb !important;
+}
+.quickJoin {
+  border-color: var(--accent) !important;
+}
+/*Menu Windows*/
+#windowHolder[style="display: none;"] {
+  display: block !important;
+  background: transparent;
+  transform: scale(0);
+  transition: 0.4s cubic-bezier(0.88, -0.98, 0.88, 0.88);
+  backdrop-filter: blur(8px);
+}
+#windowHolder[style="display: block;"] {
+  background: transparent;
+  transform: scale(1);
+  transition: 0.4s cubic-bezier(0.01, 0.01, 0.38, 0.38);
+  backdrop-filter: blur(8px);
+}
+/*Sliders*/
+.slider,
+.slider:before,
+.slider2,
+.slider2:before {
+  border-radius: 0 !important;
+}
+input:checked + .sliderSml {
+  background-color: var(--accent);
+}
+span[style="font-size:15px;color:rgba(255,255,255,0.6)"] {
+  display: none;
+}
+.switchsml {
+  margin-left: -25px !important;
+}
+input:checked + .slider {
+  background-color: var(--accent);
+}
+input:checked + .optCheck {
+  background-color: var(--accent);
+}
+.hostToggle,
+.hostPresetBtn,
+#hostMenuBtn {
+  background-color: var(--accent);
+}
+input:checked + .slider2 {
+  background-color: var(--accent);
+}
+/*CLICK??*/
+#instructions {
+  font-size: 0;
+  animation: none;
+}
+#instructions::after {
+  content: "Let's Go";
+  font-size: 32px !important;
+  animation: grow 1.2s infinite alternate;
+}
+/*Ingame*/
+/*Lemonfish css*/
+#uiBase.onGame #chatList,
+#healthValue,
+#ammoVal,
+#topRight *,
+#topLeftHolder * {
+  text-shadow: none;
+}
+
+#killsIcon,
+#deathsIcon,
+#streakIcon,
+#kdIcon,
+.weapIcon,
+#uiBase.onGame #chatInput {
+  filter: drop-shadow(var(--black));
+}
+
+#killsVal,
+#deathsVal,
+#streakVal,
+#myScoreVal,
+#kdVal {
+  color: #fff;
+}
+
+#igXPBar {
+  display: none !important;
+}
+
+#challIcon,
+#maxHP {
+  display: none;
+}
+
+#hudClassIcon {
+  display: none;
+}
+#healthBar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: calc(100 * 0.01);
+}
+
+.healthBarSeg {
+  border-radius: 0;
+  background-color: transparent;
+  margin: 0 -1px;
+  width: -webkit-fill-available;
+}
+
+.hpBSeg {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#healthValueHolder {
+  background-color: transparent;
+}
+
+#healthValue {
+  position: fixed;
+  right: calc(50% + 64px);
+  bottom: 30px;
+  font-size: 128px;
+  color: #fff;
+}
+
+#ammoDisplay {
+  transform: unset;
+  letter-spacing: unset;
+}
+
+#ammoMax,
+#ammoIcon {
+  display: none;
+}
+
+#ammoVal {
+  position: fixed;
+  bottom: 30px;
+  left: calc(50% + 64px);
+  font-size: 128px;
+  color: var(--accent);
+}
+
+#ammoDisplay {
+  transform: unset;
+  letter-spacing: unset;
+  position: fixed;
+  left: calc(50% - 32px);
+  height: 8px;
+  padding: 0;
+  width: 64px;
+  bottom: calc(50% - 32px);
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(var(--accent), var(--accent));
+}
+
+#ammoDisplay[style="background-size: 0%; display: inline-block;"] {
+  background-color: transparent;
+}
+
+#reloadMsg {
+  bottom: 200px;
+  border: none;
+  background-color: transparent;
+  text-shadow: var(--hud-text-shadow);
+}
+
+.weapIcon {
+  margin: 0 !important;
+  height: 64px;
+  width: 64px;
+  position: fixed;
+  left: 50%;
+  bottom: 96px;
+  transform: translateX(-50%);
+}
+
+.weapKey {
+  display: none;
+}
+
+.weapIcon[style*=".7"] {
+  opacity: 0 !important;
+}
+
+.weapIcon[src*="icon_1"] {
+  content: url(https://api.iconify.design/mdi/target.svg?color=white);
+}
+
+.weapIcon[src*="icon_2"] {
+  content: url(https://api.iconify.design/mdi/dots-horizontal.svg?color=white);
+}
+
+.weapIcon[src*="icon_3"],
+.weapIcon[src*="icon_11"],
+.weapIcon[src*="icon_17"] {
+  content: url(https://api.iconify.design/mdi/pistol.svg?color=white);
+}
+
+.weapIcon[src*="icon_4"] {
+  content: url(https://api.iconify.design/mdi/chevron-triple-up.svg?color=white);
+}
+
+.weapIcon[src*="icon_5"] {
+  content: url(https://api.iconify.design/mdi/dice-6.svg?color=white);
+}
+
+.weapIcon[src*="icon_6"] {
+  content: url(https://api.iconify.design/mdi/party-popper.svg?color=white);
+}
+
+.weapIcon[src*="icon_7"] {
+  content: url(https://api.iconify.design/mdi/steering.svg?color=white);
+}
+
+.weapIcon[src*="icon_8"] {
+  content: url(https://api.iconify.design/mdi/percent.svg?color=white);
+}
+
+.weapIcon[src*="icon_9"] {
+  content: url(https://api.iconify.design/mdi/rocket-launch.svg?color=white);
+}
+
+.weapIcon[src*="icon_10"] {
+  content: url(https://api.iconify.design/mdi/scatter-plot.svg?color=white);
+}
+
+.weapIcon[src*="icon_11"] {
+  background: url(https://api.iconify.design/mdi/bird.svg?color=white);
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: -2px 8px;
+}
+
+.weapIcon[src*="icon_12"],
+.weapIcon[src*="icon_13"] {
+  content: url(https://api.iconify.design/mdi/battery-high.svg?color=white);
+}
+
+.weapIcon[src*="icon_14"] {
+  content: url(https://api.iconify.design/mdi/arrow-projectile.svg?color=white);
+}
+
+.weapIcon[src*="icon_15"] {
+  content: url(https://api.iconify.design/mdi/focus-field-vertical.svg?color=white);
+}
+
+.weapIcon[src*="icon_16"] {
+  content: url(https://api.iconify.design/mdi/party-popper.svg?color=white);
+}
+
+.weapIcon[src*="icon_17"] {
+  background: url(https://api.iconify.design/mdi/magazine-pistol.svg?color=white&flip=horizontal);
+  background-size: 36px;
+  background-repeat: no-repeat;
+  background-position: -2px 24px;
+}
+
+.weapIcon[src*="icon_18"] {
+  content: url(https://api.iconify.design/mdi/bomb.svg?color=white);
+}
+
+.weapIcon[src*="icon_19"] {
+  content: url(https://api.iconify.design/mdi/lightning-bolt.svg?color=white);
+}
+
+.weapIcon[src*="icon_20"] {
+  content: url(https://api.iconify.design/mdi/hammer-wrench.svg?color=white);
+}
+
+.weapIcon[src*="icon_22"] {
+  content: url(https://api.iconify.design/mdi/gun.svg?color=white);
+  background: url(https://api.iconify.design/mdi/magazine-pistol.svg?color=white&flip=horizontal);
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: 20px 12px;
+}
+
+#weapIconMel {
+  content: url(https://api.iconify.design/mdi/knife-military.svg?color=white) !important;
+}
+
+#weapIconMel[src*="weapons/icon_0"] {
+  content: url(https://api.iconify.design/mdi/boxing-glove.svg?color=white) !important;
+}
+
+#killStreakHolder {
+  position: fixed;
+  bottom: 70px;
+  right: 180px;
+  margin: 0;
+}
+
+.killStreakItem {
+  height: 94px;
+  width: 94px;
+  background-color: transparent;
+}
+
+#timerDisplay {
+  position: fixed;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+#timerIcon {
+  display: none;
+}
+
+#timerVal {
+  padding: 0;
+  font-size: 64px;
+}
+
+#topRight {
+  right: 52px;
+  top: 58px;
+}
+
+#leaderDisplay {
+  background-color: transparent;
+  padding: 0 10px;
+  width: 360px;
+}
+
+.leaderItem {
+  font-size: 24px;
+  align-items: baseline;
+}
+
+.leaderItem i {
+  position: relative;
+  top: 4px;
+}
+
+.newLeaderName,
+.leaderName,
+.endTableN[style*="#eb5656"] {
+  color: var(--enemy) !important;
+}
+
+.newLeaderNameF,
+.leaderNameF,
+.endTableN {
+  color: var(--friendly);
+}
+
+.newLeaderContainer {
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 0;
+}
+
+.newLeaderItem {
+  font-size: 24px;
+}
+
+.countIcon {
+  font-size: 30px;
+  background-color: transparent;
+  color: #fff;
+}
+.topRightCounters {
+  position: fixed;
+  left: calc(50% - 290px);
+  bottom: 180px;
+}
+
+#killsIcon,
+#deathsIcon,
+#streakIcon,
+#kdIcon {
+  height: 26px;
+  width: 26px;
+}
+
+.countIcon i {
+  font-size: 26px !important;
+}
+
+.kfItem {
+  padding: 0 12px;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 30px;
+  text-shadow: var(--hud-text-shadow);
+  background-color: transparent;
+}
+
+.kfMsg {
+  color: #fff;
+}
+
+.kfMsg span[style*="#eb5656"] {
+  color: var(--enemy) !important;
+}
+
+.kfMsg span[style*="#9eeb56"] {
+  color: var(--friendly) !important;
+}
+
+#roundsDisplay {
+  background-color: transparent;
+  transform: unset;
+  will-change: auto;
+  margin: 0;
+}
+
+.roundScrV {
+  background-color: transparent;
+  line-height: unset;
+  height: unset;
+  color: #fff;
+  text-shadow: var(--hud-text-shadow);
+  position: fixed;
+  top: 120px;
+  border: none !important;
+  font-size: 24px;
+}
+
+#roundTSc1 {
+  right: calc(50% + 144px);
+}
+
+#roundTSc2 {
+  left: calc(50% + 144px);
+}
+
+#roundTSc1 ~ div:not(.roundScrV) {
+  margin: 0 !important;
+}
+
+#roundsVal {
+  position: fixed;
+  right: 102px;
+  bottom: 96px;
+  transform: translateX(50%);
+}
+
+#roundSub {
+  font-size: 20px;
+  position: fixed;
+  right: 102px;
+  bottom: 74px;
+  transform: translateX(50%);
+}
+
+#gameMessage {
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#teamScores {
+  position: fixed;
+  left: 50%;
+  top: 48px;
+  transform: translate(-50%);
+  background-color: transparent;
+  padding: 0;
+}
+
+#teamScores {
+  position: fixed;
+  left: 50%;
+  top: 48px;
+  transform: translate(-50%);
+  background-color: transparent;
+  padding: 0;
+}
+
+#teamScores[style*="block"] {
+  display: flex !important;
+}
+
+.tScore {
+  position: absolute;
+  width: max-content;
+}
+.tScoreC {
+  display: none !important;
+}
+.tScore:first-child {
+  direction: rtl;
+  right: calc(50% + 120px);
+  border-bottom: 4px solid var(--friendly) !important;
+}
+
+.tScore:nth-child(2) {
+  left: calc(50% + 120px);
+  border-bottom: 4px solid var(--enemy) !important;
+}
+
+.tScoreT {
+  color: #fff;
+  font-size: 48px;
+}
+
+#topLeftHolder {
+  left: 52px;
+  top: 58px;
+}
+#pingDisplay,
+#fpsDisplay,
+#ingressDisplay,
+#egressDisplay {
+  font-size: 24px;
+  color: #fff;
+}
+
+#pingText,
+#ingressPacketCount,
+#ingressDataSize,
+#egressPacketCount,
+#egressDataSize {
+  font-size: 24px;
+  color: #fff;
+}
+
+#pingDisplay .material-icons,
+#ingressDisplay .material-icons,
+#egressDisplay .material-icons {
+  font-size: 28px;
+}
+
+.debugInfo [style*="rgb(255, 75, 66)"] {
+  color: var(--bad) !important;
+}
+
+.debugInfo [style*="rgb(255, 213, 66)"] {
+  color: var(--neutral) !important;
+}
+
+.debugInfo [style*="rgb(158, 235, 86)"],
+.debugInfo [style*="#9eeb56"] {
+  color: var(--good) !important;
+}
+
+#curGameInfo {
+  display: none;
+}
+
+#speedRunHolder {
+  right: 200px;
+  bottom: 78px;
+}
+
+#spdrnZC {
+  color: var(--accent) !important;
+}
+
+#speedRunInfo i {
+  margin-left: 8px !important;
+  color: var(--accent) !important;
+}
+
+#speedRunInfo {
+  position: fixed;
+  left: calc(50% + 64px);
+  width: max-content;
+  border-bottom: none;
+  display: block;
+  font-size: 32px;
+  bottom: 128px;
+  padding: 0;
+  margin: 0;
+  text-shadow: var(--hud-text-shadow);
+}
+
+#speedRunTimer {
+  position: fixed;
+  font-size: 48px;
+  bottom: 58px;
+  left: calc(50% + 64px);
+  color: var(--ammo);
+  text-shadow: var(--hud-text-shadow);
+  margin: 0;
+}
+
+#speedRunList * {
+  text-shadow: var(--hud-text-shadow);
+}
+
+.speedRunItem {
+  font-size: 24px;
+  color: #fff;
+}
+
+.speedRunITim {
+  font-size: 24px;
+}
+
+.sriAct {
+  background-color: transparent;
+  color: var(--accent) !important;
+}
+
+.speedRunItem {
+  font-size: 24px;
+  color: #fff;
+  border-color: #fff;
+  border-width: 4px;
+}
+
+#speedRunReset {
+  display: none !important;
+}
+/*Chat*/
+#uiBase.onMenu #chatHolder {
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  width: 420px;
+}
+
+#uiBase.onGame #chatHolder {
+  left: 52px !important;
+  bottom: 70px !important;
+}
+
+#uiBase.onEndScrn #chatHolder {
+  left: 208px !important;
+  bottom: 54px !important;
+}
+
+#uiBase.onCompMenu #chatHolder {
+  bottom: 160px !important;
+}
+
+#chatList {
+  background-color: transparent;
+}
+
+#chatList::-webkit-scrollbar {
+  display: none;
+}
+
+#uiBase.onMenu #chatList {
+  text-align: center;
+  -webkit-mask-image: linear-gradient(0deg, black, transparent 200px);
+}
+
+#uiBase.onMenu .chatItem {
+  max-width: 420px;
+}
+
+.chatItem {
+  font-size: 24px;
+  margin-left: 0;
+  margin-top: 8px;
+}
+
+div:last-child .chatItem {
+  margin-bottom: 0;
+}
+
+.chatMsg {
+  color: #fff;
+}
+
+.chatMsg span[style*="#eb5656"] {
+  color: var(--enemy) !important;
+}
+
+.chatMsg span[style*="#9eeb56"] {
+  color: var(--friendly) !important;
+}
+
+.chatMsg[style*="color"] {
+  color: var(--accent) !important;
+}
+
+#chatInputHolder {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0;
+  margin: 0;
+}
+
+#voiceDisplay {
+  background-color: transparent;
+  border: none;
+}
+
+#uiBase.onGame #voiceDisplay {
+  bottom: 62px;
+}
+
+#uiBase.onMenu #voiceDisplay {
+  left: calc(50% + 180px);
+}
+
+#voiceIcon.voiceOff {
+  color: transparent !important;
+}
+
+#recTimer {
+  display: none;
+}
+
+#chatInput {
+  font-size: 0px;
+  padding: 0 8px;
+  border: none;
+  border-bottom: 0px solid transparent;
+  border-radius: 0;
+  background-color: transparent;
+  margin: 0;
+  width: -webkit-fill-available;
+  transition-duration: 0.25s;
+}
+
+#chatInput::placeholder {
+  color: transparent;
+  font-size: 0;
+}
+
+#chatInput:focus {
+  font-size: 24px;
+  border-bottom: 4px solid #fff;
+  margin-top: 8px;
+}
+
+#chatSwitchHolder {
+  position: absolute;
+  right: calc(100% + 12px);
+  bottom: 0;
+}
+
+#chatSwitch {
+  font-size: 36px;
+  color: transparent;
+  transition-duration: 0.25s;
+}
+
+#chatHolder:hover #chatSwitch {
+  color: #fff;
+}
+/*Endcard*/
+.endCard {
+  backdrop-filter: blur(8px);
+}
+#tabHolder,
+#matchVoteHolder,
+#endTable {
+  background-color: transparent;
+}
+
+.tabHeader.selected {
+  color: #fff;
+  border-bottom: none;
+}
+
+.tabHeader {
+  color: rgba(225, 225, 225, 0.9);
+}
+
+.tabHeader:hover {
+  color: #fff;
+  border-bottom: none;
+}
+
+#endTable tbody tr th {
+  border-bottom: none;
+  font-size: 0;
+  color: var(--accent);
+}
+
+#endTable tbody tr th:after {
+  font-size: 20px;
+}
+
+#endlb_rank:after {
+  content: "R";
+  color: #fff;
+}
+
+#endlb_name:after {
+  content: "N";
+  color: #fff;
+}
+
+#endlb_score:after {
+  content: "S";
+  color: #fff;
+}
+
+#endlb_kills:after {
+  content: "K";
+  color: #fff;
+}
+
+#endlb_deaths:after {
+  content: "D";
+  color: #fff;
+}
+
+#endlb_objective:after {
+  content: "P";
+  color: #fff;
+}
+
+#endlb_dmg:after {
+  content: "Dmg";
+  color: #fff;
+}
+
+#endlb_reward:after {
+  content: "Reward";
+  color: #fff;
+}
+
+.teamTotals {
+  background-color: black;
+}
+
+.crStat,
+#kdLayout,
+.gfSection,
+.endSection {
+  background-color: transparent;
+  border: none;
+}
+
+.tabBody
+  [style="text-align:center;color:#fff;font-size:30px;background-color:rgba(0, 0, 0, 0.4);border-radius:6px;padding:20px;"],
+.tabBody
+  [style*="text-align:center;color:#fff;font-size:30px;background-color:rgba(0, 0, 0, 0.4);"],
+.reportBut,
+.xpLvl,
+.modeStatus,
+.fundsVal,
+.crLabel,
+.crVal,
+.teamTotalN0,
+.teamTotalN1,
+.teamWin0,
+.teamWin1,
+.teamTotalScore,
+.matchVoteMap,
+.matchVoteMode,
+.matchVoteTotal,
+.endTitle,
+#endTimer,
+#endTable td span,
+.endTableN[style="color:rgba(255,255,255,0.6)"] {
+  background-color: transparent !important;
+  color: #dbdbdb !important;
+}
+#endTable td {
+  color: #fff !important;
+}
+.endTableN[style="color:#eb5656"] {
+  color: #fff !important;
+}
+
+.xpEndBar {
+  background-color: transparent;
+}
+
+.xpEndBarB {
+  background-color: var(--accent);
+}
+/*Stuff*/
+#startServBtn {
+  filter: grayscale(100) !important;
+}
